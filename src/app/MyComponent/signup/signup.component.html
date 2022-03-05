@@ -1,0 +1,98 @@
+<form
+  (ngSubmit)="onSubmit()"
+  class="overlay"
+  fxLayoutAlign="center center"
+  [formGroup]="this.loginForm"
+  fxLayout="column"
+  fxLayoutGap="30px"
+>
+  <mat-card fxLayout="column" class="card">
+    <h2>Signup</h2>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        formControlName="email"
+        name="email"
+        type="text"
+        matInput
+        placeholder="Enter Email"
+        [(ngModel)]="user.email_id"
+      />
+      <mat-error>Valid email id is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input
+        formControlName="username"
+        name="username"
+        type="text"
+        matInput
+        placeholder="Enter Username"
+        [(ngModel)]="user.username"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input
+        formControlName="phone"
+        matInput
+        type="text"
+        name="phone"
+        placeholder="Enter Mobile no"
+        [(ngModel)]="user.mobile_no"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        formControlName="password"
+        type="password"
+        name="password"
+        matInput
+        placeholder="Enter Password"
+        [(ngModel)]="user.password"
+      />
+      <mat-error>(8-12 Digits) Passsword is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Confirm Password</mat-label>
+      <input
+        formControlName="cpassword"
+        type="password"
+        name="cpassword"
+        
+        matInput
+        placeholder="Confirm Password"
+        [(ngModel)]="user.password"
+      />
+    </mat-form-field>
+
+    <div
+      style="margin-top: 2rem"
+      fxLayout="row"
+      fxLayoutGap="20px"
+      fxLayoutAlign="center"
+    >
+      <button color="accent" mat-raised-button type="submit" class="register">Signup</button>
+    </div>
+  </mat-card>
+</form>
+
+<style>
+  .overlay {
+    width: 100%;
+    height: 100%;
+  }
+  mat-card {
+    background-color: rgba(163, 160, 160, 0.5);
+    color: Black;
+    height: 26.5rem;
+    width: 20rem;
+  }
+  button {
+    color: white !important;
+    
+  }
+</style>
